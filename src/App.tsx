@@ -1,9 +1,17 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CustomLayout from "./pages/layout";
+import LoginForm from "./pages/LoginForm";
 
 function App() {
   return (
     <>
-      <CustomLayout />
+    <BrowserRouter>
+    <Routes>
+      <Route element={<LoginForm/>} path={"/"}>
+      <Route path="/landingPage" element={<CustomLayout/>}/>
+      </Route>
+    </Routes>
+    </BrowserRouter>
     </>
   );
 }

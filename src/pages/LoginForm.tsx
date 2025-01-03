@@ -1,70 +1,51 @@
 
+import { useState } from "react";
 import logo from "../../src/assets/logo (2).svg";
+import SignInUpForm from "./SignInUpForm";
 
 const LoginForm = () => {
+  const [isSignUp, setIsSignUp] = useState(false);
   return (
     <div className="w-screen h-screen flex ">
-      
-      <div className="bg-black h-full  w-full flex items-center justify-center md:w-[43.75%] text-assGray">
-        <div className=" flex flex-col justify-center items-center h-full p-5 ">
-          <div className=" font-sans ">
-            <p className="font-bold text-4xl"><span className="text-red">#1 Doubt </span><span className="text-white"> Solving App</span></p>
-            <p className="text-sm text-blue"><span>Solve problems </span><span className="text-white">anytime, anywhere</span></p>
-          </div>
-          <div className=" bg-red-600 h-[24.5625rem] mt-[5.375rem] justify-start w-full">
-            {/* <div className="flex flex-col h-full "> */}
-            <p className="font-bold text-5xl pb-2 pt-2 text-white">
-              Login
-            </p>
-            <p className="pt-3 pb-3">
-              Enter your account details
-            </p>
-
-            <div className="pt-3 pb-3">
-              {/* <Input placeholder="User name" ></Input> */}
-              <input
-                className="bg-transparent border-b-2 border-gray-400 text-gray-400 placeholder-assGray focus:outline-none  mb-4 w-full pb-3"
-                placeholder="Username"
-              />
+      <div className="bg-black w-full h-full text-white font-sans">
+        <div className="h-full w-full flex flex-col justify-center items-center">
+          <div className="text-white  h-[80%] w-[100%] sm:w-[60%] flex flex-col justify-center md:w-full ">
+            <div className="w-full  h-[15%] flex justify-center">
+              <div className="w-[90%] md:w-[70%] lg:w-[60%]">
+                <p className="lg:text-4xl text-xl md:text-3xl "><span className="text-red ">#1 Doubt </span><span>Solving App</span></p>
+                <p><span className="ml-4 text-blue">Solve problems </span><span>anytime, anywhere</span></p>
+              </div>
             </div>
-            <div className="pt-3 pb-3">
-              <input
-                className="bg-transparent border-b-2 border-gray-400 text-gray-400 placeholder-assGray focus:outline-none w-full  mb-4 pb-3"
-                placeholder="Password"
-                type="password"
-              />
-            </div>
-
-            <div>
-              <div className="pt-3 pb-3">Forgot Password</div>
-            </div>
-            <div className="w-full h-10">
-              <button title="Login" className="w-full bg-purple text-white bg-none mb-4 h-full rounded-lg" >Login</button>
-            </div>
-          </div>
-          {/* </div> */}
-          <div className="  flex items-end w-full  md:h-[20%] gap-16 ">
-            <div className="mb-3">
-              Dont't have an account?
-            </div>
-            <div className=" bg-slate-500 rounded-lg text-white ">
-              <button className="p-3 rounded-lg">Sign up</button>
+            <div className="w-full  lg:h-[85%] h-full  ">
+              <SignInUpForm isSignUp={isSignUp} />
             </div>
           </div>
 
+          <div className="lg:h-[10%] w-[100%] flex justify-center mt-4 sm:w-[60%]  md:w-full lg:w-[60%] ">
+            <div className="w-[90%] md:w-[70%] lg:w-[90%] flex justify-between items-end  h-full ">
+              <div className="p-3 ">
+                Dont't have an account?
+              </div>
+              <div className="  rounded-lg text-white ">
+                <button className="rounded-lg bg-slate-500 p-3" onClick={() => setIsSignUp(!isSignUp)}>{isSignUp ? "Sign in" : "Sign up"}</button>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
-      <div className="md:w-[56.25%] h-full bg-purple md:block hidden ">
-        <div className="justify-center items-center flex-col flex h-full">
+      <div className="bg-purple w-full h-full hidden lg:flex  justify-center items-center">
+        <div className=" h-[90%] w-[90%] flex flex-col justify-between ">
           <div className="text-white">
-            <p className="font-bold text-7xl">Welcome to</p>
-            <p className="text-7xl">student portal</p>
+            <p className="font-bold lg:text-7xl text-2xl">Welcome to</p>
+            <p className="lg:text-7xl text-2xl mb-4">student portal</p>
             <p>Login to access your account</p>
           </div>
-          <div><img src={logo}/></div>
+          <div className="w-[90%]"><img src={logo} /></div>
         </div>
+
       </div>
-    </div>
+    </div >
   );
 }
 

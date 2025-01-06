@@ -30,7 +30,7 @@ const Dashboard: React.FC = () => {
           <div className="finance-section">
             <h4>Finanace</h4>
             <Row gutter={16}>
-              <Col span={8}>
+              <Col span={8}>  
                 <Card
                   bordered={false}
                   // title={<img src={coinSrc} width="95%" alt="coin" />}

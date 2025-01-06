@@ -11,7 +11,8 @@ export default {
         white: "#ffff",
         red: "#CB1E1E",
         blue:"#0927CF",
-        assGray:"#707175"
+        assGray:"#707175",
+        green :"#0D2602"
       }, fontFamily: {
         sans: ['"Open Sans"', 'ui-sans-serif', 'system-ui'],
       },
